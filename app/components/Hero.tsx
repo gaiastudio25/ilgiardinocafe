@@ -28,9 +28,8 @@ export default function Hero() {
         </div>
 
         <h1 className="animate-fade-in-up-delay-1 font-heading text-7xl uppercase leading-none tracking-tight text-carbon sm:text-8xl md:text-9xl lg:text-[10rem]">
-          BRUMA
-          <br />
-          <span className="text-salvia">CAFÉ</span>
+          <img src="/images/logo.png" alt="Bruma Café" width={400} height={200} />
+
         </h1>
 
         <div className="animate-fade-in-up-delay-2 mt-6 md:mt-8">
