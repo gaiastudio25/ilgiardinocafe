@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -39,12 +40,12 @@ export default function Hero() {
         </div>
 
         <div className="animate-fade-in-up-delay-3 mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <a href="#menu" className="btn-primary">
+          <Link to="/menu" className="btn-primary">
             Ver menú
-          </a>
-          <a href="#nosotros" className="btn-secondary">
+          </Link>
+          <Link to="/nosotros" className="btn-secondary">
             Conocenos
-          </a>
+          </Link>
         </div>
       </div>
 

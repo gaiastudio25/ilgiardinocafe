@@ -1,25 +1,13 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Mission from "./components/Mission";
-import Menu from "./components/Menu";
-import Gallery from "./components/Gallery";
-import Info from "./components/Info";
-import Footer from "./components/Footer";
+"use client";
+
+import { lazy, Suspense } from "react";
+
+const AppRouter = lazy(() => import("./AppRouter"));
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Mission />
-        <Menu />
-        <Gallery />
-        <Info />
-      </main>
-      <Footer />
-    </>
+    <Suspense fallback={<div className="min-h-screen bg-[#F7F2EC]" />}>
+      <AppRouter />
+    </Suspense>
   );
 }

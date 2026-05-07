@@ -1,34 +1,37 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#menu", label: "Menú" },
-  { href: "#galeria", label: "Galería" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/menu", label: "Menú" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = "";
+      if (mounted) document.body.style.overflow = "";
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, mounted]);
 
   const handleLinkClick = () => setMobileOpen(false);
 
@@ -40,25 +43,27 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
         {/* Logo */}
-        <img
-          src="/images/logo.png"
-          alt="Bruma Café"
-          width={100}
-          height={100}
-          className="font-heading text-xl tracking-wider text-carbon"
-          aria-label="Bruma Café - Inicio"
-        />
+        <Link to="/" className="block">
+          <img
+            src="/images/logo.png"
+            alt="Bruma Café"
+            width={100}
+            height={100}
+            className="font-heading text-xl tracking-wider text-carbon"
+            aria-label="Bruma Café - Inicio"
+          />
+        </Link>
 
         {/* Desktop Links */}
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 className="font-accent text-xs uppercase tracking-widest text-carbon-light transition-colors duration-300 hover:text-salvia"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -106,22 +111,24 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Enlaces con jerarquía tipográfica Bruma */}
+{/* Enlaces con jerarquía tipográfica Bruma */}
             <nav className="flex flex-col gap-6">
+              <Link
+                to="/"
+                onClick={handleLinkClick}
+                className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A9CB5A] transition-colors"
+              >
+                Inicio
+              </Link>
               {navLinks.map((link, index) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={handleLinkClick}
                   className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A9CB5A] transition-colors"
-                  style={{
-                    transitionDelay: `${index * 50}ms`,
-                    opacity: mobileOpen ? 1 : 0,
-                    transform: mobileOpen ? 'translateX(0)' : 'translateX(20px)'
-                  }}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 

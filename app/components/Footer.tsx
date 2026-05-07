@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="border-t border-arcilla/20 bg-crema py-12">
@@ -5,9 +7,9 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           {/* Logo & Tagline */}
           <div className="text-center md:text-left">
-            <p className="font-heading text-2xl uppercase tracking-wider text-carbon">
+            <Link to="/" className="font-heading text-2xl uppercase tracking-wider text-carbon">
               BRUMA CAFÉ
-            </p>
+            </Link>
             <p className="mt-1 font-accent text-xs text-carbon-lighter">
               La pausa que el día necesita
             </p>
@@ -16,18 +18,17 @@ export default function Footer() {
           {/* Links */}
           <nav aria-label="Footer navigation" className="flex gap-6">
             {[
-              { href: "#nosotros", label: "Nosotros" },
-              { href: "#menu", label: "Menú" },
-              { href: "#galeria", label: "Galería" },
-              { href: "#contacto", label: "Contacto" },
+              { href: "/nosotros", label: "Nosotros" },
+              { href: "/menu", label: "Menú" },
+              { href: "/contacto", label: "Contacto" },
             ].map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="font-accent text-xs uppercase tracking-wider text-carbon-light transition-colors hover:text-salvia"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
