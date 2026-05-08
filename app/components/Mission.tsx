@@ -26,41 +26,43 @@ const pillars = [
 
 export default function Mission() {
   return (
-    <section className="section-padding bg-salvia text-white">
+    <section className="py-16 lg:py-20 bg-salvia text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <ScrollReveal>
-          <div className="mb-16 max-w-2xl">
-            <p className="mb-4 font-accent text-xs uppercase tracking-[0.3em] text-palta">
+          <div className="mb-12 max-w-xl text-center mx-auto">
+            <p className="mb-4 font-accent text-xs uppercase tracking-[0.4em] text-palta">
               Nuestra visión
             </p>
-            <h2 className="font-heading text-4xl uppercase leading-tight sm:text-5xl lg:text-6xl">
-              Un punto de
-              <br />
-              respiración
+            <h2 className="font-heading text-3xl uppercase leading-[1.1] sm:text-4xl lg:text-5xl">
+              Un punto de<br />respiración
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-white/70">
-              Creemos en los espacios que cuidan. En que una pausa bien tomada
-              puede cambiar el resto del día.
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <span className="h-px w-8 bg-palta/40" />
+              <span className="w-1 h-1 rounded-full bg-palta/40" />
+              <span className="h-px w-8 bg-palta/40" />
+            </div>
+            <p className="mt-6 text-base leading-relaxed text-white/70">
+              Creemos en los espacios que cuidan.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid gap-8 md:grid-cols-3 md:gap-6 lg:gap-10">
+        <div className="grid gap-6 md:grid-cols-3 md:gap-4">
           {pillars.map((pillar, i) => (
             <ScrollReveal key={pillar.number} delay={i * 150}>
-              <div className="group rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-500 hover:border-palta/30 hover:bg-white/10 lg:p-10">
-                <span className="font-accent text-sm text-palta">
+              <div className="group border-l border-white/10 pl-6 transition-all duration-500 hover:border-palta/40">
+                <span className="font-accent text-xs text-palta/70">
                   {pillar.number}
                 </span>
-                <h3 className="mt-4 font-heading text-2xl uppercase tracking-wide lg:text-3xl">
+                <h3 className="mt-3 font-heading text-lg uppercase tracking-wide text-white">
                   {pillar.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/60 lg:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-white/50">
                   {pillar.description}
                 </p>
-                <div className="mt-8 flex items-center gap-3">
-                  <div className="h-px w-8 bg-palta/50 transition-all duration-500 group-hover:w-12" />
-                  <span className="font-accent text-xs uppercase tracking-wider text-palta/70">
+                <div className="mt-4 flex items-center gap-2">
+                  <div className="h-px w-6 bg-palta/30 transition-all duration-500 group-hover:w-10" />
+                  <span className="font-accent text-[10px] uppercase tracking-wider text-palta/50">
                     {pillar.accent}
                   </span>
                 </div>

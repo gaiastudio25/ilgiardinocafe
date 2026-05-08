@@ -72,7 +72,7 @@ export default function RootLayout({
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Luis Alberto de Herrera 2341",
+      streetAddress: "Gral. Máximo Tajes 7288 ",
       addressLocality: "Montevideo",
       addressCountry: "UY",
     },

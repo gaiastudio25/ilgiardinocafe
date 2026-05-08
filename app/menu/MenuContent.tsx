@@ -1,304 +1,178 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const menuData = {
-  cafe: [
-    { name: "Espresso simple", price: "130" },
-    { name: "Espresso doble", price: "160" },
-    { name: "Americano", price: "190" },
-    { name: "Americano doble", price: "210" },
-    { name: "Macchiato", price: "190" },
-    { name: "Macchiato doble", price: "210" },
-    { name: "Cortado", price: "220" },
-    { name: "Moca", price: "240" },
-    { name: "Latte", price: "240" },
-    { name: "Vanilla Latte", price: "240" },
-    { name: "Métodos", price: "240" },
-    { name: "V60 Perú", price: "260" },
-    { name: "V60 Mario", price: "280" },
-    { name: "Affogato", price: "260" },
-    { name: "Espresso Tonic", price: "250" },
-    { name: "Cold Brew", price: "220" },
-    { name: "Iced Vanilla Latte", price: "240" },
-  ],
-  bebidas: [
-    { name: "Chocolate", price: "200" },
-    { name: "Chai", price: "220" },
-    { name: "Té", price: "180" },
-    { name: "Jugo de naranja", price: "200" },
-    { name: "Limonada", price: "220" },
-    { name: "Infusiones", price: "170" },
-    { name: "Té Blend", price: "190" },
-    { name: "Frappé berries", price: "250" },
-    { name: "Licuado con fruta de estación", price: "250" },
-  ],
-  dulces: [
-    { name: "Rollo de canela", price: "240" },
-    { name: "Rollo de manzana", price: "240" },
-    { name: "Carrot Cake", price: "340" },
-    { name: "Red Velvet Cake", price: "340" },
-    { name: "Balisto dulce", price: "190" },
-    { name: "Tarta de coco y dulce de leche", price: "200" },
-    { name: "Muffin relleno de jalea", price: "180" },
-    { name: "Cookie", price: "150" },
-    { name: "Alfajor de banana y chocolate blanco", price: "210" },
-    { name: "Alfajor clásico", price: "200" },
-    { name: "Lemon Pie", price: "180" },
-    { name: "Brownie de chocolate", price: "190" },
-    { name: "Carrot Cake húmedo", price: "180" },
-  ],
-  granos: [
-    { name: "Ethiopia", price: "250" },
-    { name: "Asia Blend 200ml", price: "300" },
-    { name: "Espresso Blend", price: "170" },
-    { name: "Khipu de café brasil", price: "170" },
-    { name: "Agua tónica 200ml", price: "180" },
-  ],
-  cocina: [
-    { name: "Ensalada César", price: "310" },
-    { name: "Focaccia Vito", price: "350" },
-    { name: "Milanesa de berenjena al grill", price: "350" },
-    { name: "Sándwich de pollo al grill", price: "340" },
-    { name: "Sándwich Bruma", price: "350" },
-    { name: "Bagel de salmón", price: "320" },
-    { name: "Croquetas de papa y espinaca", price: "350" },
-    { name: "Empanitas de pollo (4u)", price: "350" },
-    { name: "Milanesa al pan", price: "310" },
-    { name: "Ensalada de maple", price: "300" },
-    { name: "Focaccia XL", price: "450" },
-    { name: "Hummus", price: "300" },
-    { name: "Hamburguesa de lentejas", price: "370" },
-  ],
-  desayunos: [
-    { name: "Croissant relleno", price: "320" },
-    { name: "Sándwich caprese", price: "450" },
-    { name: "Focaccia rellena", price: "340" },
-    { name: "Plate Brunch", price: "450" },
-    { name: "Pan de queso", price: "170" },
-    { name: "Pan de queso relleno", price: "180" },
-    { name: "Medialuna", price: "120" },
-    { name: "Medialuna rellena jamón y queso", price: "145" },
-    { name: "Scone de queso", price: "100" },
-    { name: "Scone relleno", price: "175" },
-    { name: "Sándwich de jamón cocido y queso", price: "420" },
-    { name: "Tostón con palta", price: "400" },
-    { name: "Tostón de palta XL", price: "650" },
-  ],
-};
-
-const categories = [
-  { key: "cafe", title: "CAFÉ" },
-  { key: "bebidas", title: "BEBIDAS SIN CAFÉINA" },
-  { key: "dulces", title: "DULCES" },
-  { key: "granos", title: "GRANO" },
-  { key: "cocina", title: "COCINA" },
-  { key: "desayunos", title: "DESAYUNOS Y MERIENDAS" },
-];
-
-function MenuItem({ name, price }: { name: string; price: string }) {
-  return (
-    <div className="menu-row">
-      <span className="item-name">{name}</span>
-      <span className="item-price">${price}</span>
-    </div>
-  );
-}
-
-function MenuSection({ title, items }: { title: string; items: { name: string; price: string }[] }) {
-  const mid = Math.ceil(items.length / 2);
-  const left = items.slice(0, mid);
-  const right = items.slice(mid);
-
-  return (
-    <div className="menu-section">
-      <h2 className="section-title">{title}</h2>
-      <div className="columns-row">
-        <div className="column">
-          {left.map((item, idx) => (
-            <MenuItem key={idx} name={item.name} price={item.price} />
-          ))}
-        </div>
-        <div className="column">
-          {right.map((item, idx) => (
-            <MenuItem key={idx} name={item.name} price={item.price} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function MenuContent() {
+  const [activeSection, setActiveSection] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      const sections = document.querySelectorAll("[data-section]");
+      sections.forEach((section, idx) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 200 && rect.bottom > 200) {
+          setActiveSection(idx);
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (idx: number) => {
+    const sections = document.querySelectorAll("[data-section]");
+    sections[idx]?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="menu-wrapper">
+    <div className="menu-page pt-24">
+      <section className="pt-8 pb-4 lg:pt-10 lg:pb-6">
+        <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
+          <p className="mb-6 font-accent text-xs uppercase tracking-[0.35em] text-palta-dark">
+            Nuestra oferta
+          </p>
+          <h1 className="font-heading text-5xl uppercase leading-tight text-carbon sm:text-6xl lg:text-7xl">
+            Nuestro menú
+          </h1>
+          <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-carbon-light">
+            Café de especialidad, bebidas artesanales y opciones para acompañar.
+          </p>
+        </div>
+      </section>
+
       <style jsx global>{`
-        .menu-wrapper {
+        .menu-page {
           min-height: 100vh;
-          background: #f7f3eb;
-          padding: 70px 20px 44px;
-          font-family: 'Times New Roman', Times, serif;
+          background: #f7f2ec;
+          position: relative;
         }
 
-        .menu-header {
-          text-align: center;
-          margin-bottom: 28px;
+        .menu-page::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+          opacity: 0.03;
+          pointer-events: none;
+          z-index: 0;
         }
 
-        .header-logo img {
-          max-width: 130px;
-          height: auto;
-          margin-bottom: 10px;
+       
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
-        .header-subtitle {
-          font-size: 10px;
-          letter-spacing: 0.3em;
-          text-transform: uppercase;
-          color: #5d6b4d;
-          margin-bottom: 4px;
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
-        .header-title {
-          font-size: 28px;
-          font-weight: 400;
-          color: #3d4d36;
+        @keyframes scrollIndicator {
+          0% { opacity: 1; transform: translateY(0); }
+          50% { opacity: 0.3; transform: translateY(10px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
 
-        .header-tagline {
-          font-size: 12px;
-          font-style: italic;
-          color: #7a7a6b;
-        }
+        
 
-        .menu-main {
-          max-width: 640px;
+        
+
+       
+
+        
+
+        
+
+        /* Menu Sections */
+        .menu-section {
+          position: relative;
+          z-index: 1;
+          padding: 0 1.5rem 4rem;
+          max-width: 1400px;
           margin: 0 auto;
         }
 
-        .columns-container {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 0;
+        @media (min-width: 768px) {
+          .menu-section {
+            padding: 0 3rem 4rem;
+          }
         }
 
-        .left-col, .right-col {
+        .menu-svg-container {
+          width: 100%;
           display: flex;
           flex-direction: column;
+          gap: 3rem;
+          align-items: center;
         }
 
-        .columns-row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 20px;
-        }
-
-        .menu-section {
-          margin-bottom: 20px;
-        }
-
-        .section-title {
-          font-size: 13px;
-          font-weight: 400;
-          color: #3d4d36;
-          text-transform: uppercase;
-          letter-spacing: 0.12em;
-          margin-bottom: 8px;
-          padding-bottom: 4px;
-          border-bottom: 1px solid rgba(61, 77, 54, 0.2);
-        }
-
-        .column {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .menu-row {
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          padding: 4px 0;
-          border-bottom: 1px dotted rgba(61, 77, 54, 0.12);
-        }
-
-        .item-name {
-          font-size: 11px;
-          color: #3d4d36;
-        }
-
-        .item-price {
-          font-size: 11px;
-          color: #3d4d36;
-        }
-
-        .menu-footer {
-          text-align: center;
-          margin-top: 32px;
-          padding-top: 16px;
-        }
-
-        .footer-logo {
-          font-size: 13px;
-          color: #3d4d36;
-        }
-
-        .footer-tagline {
-          font-size: 10px;
-          font-style: italic;
-          color: #7a7a6b;
-        }
-
-        @media (min-width: 580px) {
-          .menu-wrapper {
-            padding: 80px 32px 50px;
+        @media (min-width: 1024px) {
+          .menu-svg-container {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
           }
-          .header-title {
-            font-size: 34px;
+        }
+
+.menu-svg-wrapper {
+          flex: 1;
+          max-width: 600px;
+          position: relative;
+          border-radius: 4px;
+          overflow: hidden;
+        }
+
+        @media (min-width: 1024px) {
+          .menu-svg-wrapper {
+            max-width: 50%;
           }
-          .columns-row {
-            gap: 32px;
-          }
-          .columns-container {
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-          }
+        }
+
+        .menu-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 4px;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
       `}</style>
-
-      <header className="menu-header">
-       
-        <p className="header-subtitle">Menú</p>
-        <h1 className="header-title">Bruma Café</h1>
-        <p className="header-tagline">La pausa que el día necesita</p>
-      </header>
-
-      <div className="menu-main">
-        <div className="columns-container">
-          <div className="left-col">
-            {categories.slice(0, 3).map((cat) => (
-              <MenuSection 
-                key={cat.key} 
-                title={cat.title} 
-                items={menuData[cat.key as keyof typeof menuData]} 
-              />
-            ))}
+      <div className="menu-section" data-section>
+        <div className="menu-svg-container">
+          <div className="menu-svg-wrapper">
+            <Image
+              src="/menu/1.svg"
+              alt="Menú Bruma Café - Página 1"
+              width={595}
+              height={842}
+              className="menu-img"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
-          <div className="right-col">
-            {categories.slice(3, 6).map((cat) => (
-              <MenuSection 
-                key={cat.key} 
-                title={cat.title} 
-                items={menuData[cat.key as keyof typeof menuData]} 
-              />
-            ))}
+          <div className="menu-svg-wrapper">
+            <Image
+              src="/menu/2.svg"
+              alt="Menú Bruma Café - Página 2"
+              width={595}
+              height={842}
+              className="menu-img"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
       </div>
 
-      <footer className="menu-footer">
-        <p className="footer-logo">Bruma Café</p>
-        <p className="footer-tagline">La pausa que el día necesita</p>
-      </footer>
+      
     </div>
   );
 }

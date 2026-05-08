@@ -17,19 +17,21 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="section-padding bg-crema-dark">
+    <section className="py-16 lg:py-20 bg-crema-dark">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <ScrollReveal>
-          <div className="mb-12 text-center">
-            <p className="mb-4 font-accent text-xs uppercase tracking-[0.3em] text-palta-dark">
+          <div className="mb-10 text-center">
+            <p className="mb-4 font-accent text-xs uppercase tracking-[0.4em] text-palta-dark">
               Reseñas
             </p>
-            <h2 className="font-heading text-4xl uppercase text-carbon sm:text-5xl lg:text-6xl">
+            <h2 className="font-heading text-3xl uppercase text-carbon sm:text-4xl lg:text-5xl">
               Lo que dicen
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-carbon-light">
-              Esto es lo que opinan quienes ya encontraron su pausa.
-            </p>
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <span className="h-px w-6 bg-palta/30" />
+              <span className="w-1 h-1 rounded-full bg-palta/30" />
+              <span className="h-px w-6 bg-palta/30" />
+            </div>
           </div>
         </ScrollReveal>
 

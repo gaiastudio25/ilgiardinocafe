@@ -4,7 +4,7 @@ import ScrollReveal from "../components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Visitanos en Montevideo, Uruguay. Café de especialidad, WiFi libre, espacio de trabajo. Luis Alberto de Herrera 2341, Punta Carretas.",
+    "Visitanos en Montevideo, Uruguay. Café de especialidad, WiFi libre, espacio de trabajo. Gral. Máximo Tajes 7288, Carrasco.",
   openGraph: {
     title: "Contacto — Bruma Café",
     description:
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 export default function ContactoPage() {
   return (
     <div className="pt-24">
-      <section className="section-padding">
+      <section className="pt-8 pb-4 lg:pt-10 lg:pb-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <ScrollReveal>
-            <div className="mb-16 text-center">
+            <div className="text-center">
               <p className="mb-4 font-accent text-xs uppercase tracking-[0.3em] text-palta-dark">
                 Visitanos
               </p>
