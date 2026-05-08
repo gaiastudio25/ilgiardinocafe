@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -7,7 +7,6 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero.png"
@@ -20,7 +19,6 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-crema/80 via-crema/65 to-crema/95" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 px-6 text-center">
         <div className="animate-fade-in-up">
           <p className="mb-4 font-accent text-xs uppercase tracking-[0.35em] text-salvia">
@@ -28,9 +26,15 @@ export default function Hero() {
           </p>
         </div>
 
-        <h1 className="animate-fade-in-up-delay-1 font-heading text-7xl uppercase leading-none tracking-tight text-carbon sm:text-8xl md:text-9xl lg:text-[10rem]">
-          <img src="/images/logo.png" alt="Bruma Café" width={400} height={200} />
-
+        <h1 className="animate-fade-in-up-delay-1 flex justify-center">
+          <Image
+            src="/images/logo.png"
+            alt="Bruma Café"
+            width={400}
+            height={200}
+            priority
+            className="h-auto w-auto max-w-[280px] sm:max-w-[400px]"
+          />
         </h1>
 
         <div className="animate-fade-in-up-delay-2 mt-6 md:mt-8">
@@ -40,16 +44,15 @@ export default function Hero() {
         </div>
 
         <div className="animate-fade-in-up-delay-3 mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link to="/menu" className="btn-primary">
+          <Link href="/menu" className="btn-primary">
             Ver menú
           </Link>
-          <Link to="/nosotros" className="btn-secondary">
+          <Link href="/nosotros" className="btn-secondary">
             Conocenos
           </Link>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-scroll-indicator">
         <div className="flex flex-col items-center gap-2">
           <span className="font-accent text-[10px] uppercase tracking-widest text-carbon-lighter">

@@ -12,6 +12,8 @@
   --color-carbon: #2D2D2D;
   --color-carbon-light: #6B6B6B;
   --color-carbon-lighter: #9B9B9B;
+  --color-olive: #5E6B4D;
+  --color-olive-light: #8B9A6B;
 
   /* Typography */
   --font-heading: var(--font-anton), "Anton", sans-serif;

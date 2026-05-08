@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ScrollReveal from "../components/ScrollReveal";
-import { Link } from "react-router-dom";
-
+import Link from "next/link";
 const pillars = [
   {
     number: "01",
@@ -152,7 +151,7 @@ export default function NosotrosPage() {
                   pensamientos y donde cada visita se siente como volver a
                   un lugar que ya conoces.
                 </p>
-                <Link to="/contacto" className="btn-primary">
+                <Link href="/contacto" className="btn-primary">
                   Visitanos
                 </Link>
               </div>

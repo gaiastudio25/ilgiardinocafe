@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
 
 const navLinks = [
   { href: "/nosotros", label: "Nosotros" },
@@ -38,12 +38,10 @@ export default function Navbar() {
   return (
     <header
       id="navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "navbar-solid py-3" : "py-5"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "navbar-solid py-3" : "py-5"}`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
-        {/* Logo */}
-        <Link to="/" className="block">
+        <Link href="/" className="block">
           <img
             src="/images/logo.png"
             alt="Bruma Café"
@@ -54,12 +52,11 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Links */}
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
-                to={link.href}
+                href={link.href}
                 className="font-accent text-xs uppercase tracking-widest text-carbon-light transition-colors duration-300 hover:text-salvia"
               >
                 {link.label}
@@ -68,7 +65,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Hamburger */}
         <button
           id="mobile-menu-toggle"
           className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-2 md:hidden focus:outline-none"
@@ -76,32 +72,23 @@ export default function Navbar() {
           aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={mobileOpen}
         >
-          {/* Línea Superior */}
           <span
-            className={`block h-[1px] bg-carbon transition-all duration-500 ease-in-out ${mobileOpen ? "w-6 translate-y-[4.5px] rotate-45" : "w-6"
-              }`}
+            className={`block h-[1px] bg-carbon transition-all duration-500 ease-in-out ${mobileOpen ? "w-6 translate-y-[4.5px] rotate-45" : "w-6"}`}
           />
-          {/* Línea Inferior - Jugamos con anchos distintos para un look más "estudio de diseño" */}
           <span
-            className={`block h-[1px] bg-carbon transition-all duration-500 ease-in-out ${mobileOpen ? "w-6 -translate-y-[4.5px] -rotate-45" : "w-5"
-              }`}
+            className={`block h-[1px] bg-carbon transition-all duration-500 ease-in-out ${mobileOpen ? "w-6 -translate-y-[4.5px] -rotate-45" : "w-5"}`}
           />
         </button>
 
-        {/* Backdrop: Oscurece el fondo sin taparlo totalmente */}
         <div
-          className={`fixed inset-0 z-40 bg-carbon/20 backdrop-blur-sm transition-opacity duration-500 ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            }`}
+          className={`fixed inset-0 z-40 bg-carbon/20 backdrop-blur-sm transition-opacity duration-500 ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
           onClick={() => setMobileOpen(false)}
         />
 
-        {/* Menú Lateral: No ocupa toda la pantalla */}
         <div
-          className={`fixed inset-y-0 right-0 z-50 w-[80%] max-w-sm bg-[#F7F2EC] shadow-2xl transform transition-transform duration-500 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"
-            } md:hidden`}
+          className={`fixed inset-y-0 right-0 z-50 w-[80%] max-w-sm bg-[#F7F2EC] shadow-2xl transform transition-transform duration-500 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"} md:hidden`}
         >
           <div className="flex flex-col h-full p-8">
-            {/* Botón Cerrar integrado o alineado */}
             <div className="flex justify-end mb-12">
               <button
                 onClick={() => setMobileOpen(false)}
@@ -111,19 +98,18 @@ export default function Navbar() {
               </button>
             </div>
 
-{/* Enlaces con jerarquía tipográfica Bruma */}
             <nav className="flex flex-col gap-6">
               <Link
-                to="/"
+                href="/"
                 onClick={handleLinkClick}
                 className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A9CB5A] transition-colors"
               >
                 Inicio
               </Link>
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
-                  to={link.href}
+                  href={link.href}
                   onClick={handleLinkClick}
                   className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A9CB5A] transition-colors"
                 >
@@ -132,14 +118,16 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* Espacio de "Refugio" en la base del menú */}
             <div className="mt-auto pt-12 border-t border-[#D4B8A5]/30">
               <p className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-[0.2em] text-[#C9A98A] mb-4">
                 La pausa que el día necesita
               </p>
               <div className="flex flex-col gap-1 text-[11px] font-['DM_Sans'] text-carbon/60">
                 <span>Montevideo, Uruguay</span>
-                <a href="https://instagram.com/brumacafe" className="underline decoration-[#A9CB5A] underline-offset-4">
+                <a
+                  href="https://instagram.com/brumacafe"
+                  className="underline decoration-[#A9CB5A] underline-offset-4"
+                >
                   @brumacafe
                 </a>
               </div>

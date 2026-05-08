@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="border-t border-arcilla/20 bg-crema py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
-          {/* Logo & Tagline */}
           <div className="text-center md:text-left">
-            <Link to="/" className="font-heading text-2xl uppercase tracking-wider text-carbon">
+            <Link
+              href="/"
+              className="font-heading text-2xl uppercase tracking-wider text-carbon"
+            >
               BRUMA CAFÉ
             </Link>
             <p className="mt-1 font-accent text-xs text-carbon-lighter">
@@ -15,7 +17,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links */}
           <nav aria-label="Footer navigation" className="flex gap-6">
             {[
               { href: "/nosotros", label: "Nosotros" },
@@ -24,7 +25,7 @@ export default function Footer() {
             ].map((link) => (
               <Link
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className="font-accent text-xs uppercase tracking-wider text-carbon-light transition-colors hover:text-salvia"
               >
                 {link.label}
@@ -32,7 +33,6 @@ export default function Footer() {
             ))}
           </nav>
 
-          {/* Social */}
           <div className="flex items-center gap-4">
             <a
               href="https://instagram.com/brumacafe"
@@ -57,7 +57,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://wa.me/542614000000"
+              href="https://wa.me/59891234567"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -75,7 +75,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="mt-10 border-t border-arcilla/20 pt-6 text-center">
           <p className="font-accent text-[11px] text-carbon-lighter">
             © {new Date().getFullYear()} Bruma Café. Todos los derechos

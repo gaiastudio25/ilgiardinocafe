@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import ScrollReveal from "../components/ScrollReveal";
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description:
+    "Visitanos en Montevideo, Uruguay. Café de especialidad, WiFi libre, espacio de trabajo. Luis Alberto de Herrera 2341, Punta Carretas.",
+  openGraph: {
+    title: "Contacto — Bruma Café",
+    description:
+      "Encontranos en Montevideo, Uruguay. Café de especialidad, WiFi y espacio de trabajo.",
+  },
+};
 
 export default function ContactoPage() {
   return (
@@ -61,7 +73,7 @@ export default function ContactoPage() {
                     Dirección
                   </h2>
                   <p className="text-lg text-carbon-light">
-                    Luis Alberto de Herrera 2341
+                    Gral. Máximo Tajes 7288
                     <br />
                     Montevideo, Uruguay
                   </p>
@@ -155,14 +167,7 @@ export default function ContactoPage() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <rect
-                          x="2"
-                          y="2"
-                          width="20"
-                          height="20"
-                          rx="5"
-                          ry="5"
-                        />
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                         <circle cx="12" cy="12" r="5" />
                         <path d="M17.5 6.5h.01" />
                       </svg>
