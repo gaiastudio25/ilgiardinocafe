@@ -16,9 +16,10 @@
   --color-olive-light: #8B9A6B;
 
   /* Typography */
-  --font-heading: var(--font-anton), "Anton", sans-serif;
-  --font-body: var(--font-dm-sans), "DM Sans", sans-serif;
-  --font-accent: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+  --font-heading: var(--font-playfair), "Playfair Display", serif;
+  --font-body: var(--font-source-sans), "Source Sans Pro", sans-serif;
+  --font-accent: var(--font-source-sans), "Source Sans Pro", sans-serif;
+  --font-script: var(--font-pinyon), "Pinyon Script", cursive;
 }
 
 /* ── Base ── */

@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
-import { Anton, DM_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Playfair_Display, Source_Sans_3, Pinyon_Script } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import "./globals.css";
 
-const anton = Anton({
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-source-sans",
+  display: "swap",
+});
+
+const pinyonScript = Pinyon_Script({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-anton",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-mono",
+  variable: "--font-pinyon",
   display: "swap",
 });
 
@@ -97,8 +96,12 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${anton.variable} ${dmSans.variable} ${ibmPlexMono.variable}`}
+      className={`${playfairDisplay.variable} ${sourceSans.variable} ${pinyonScript.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://maps.googleapis.com" />
+      </head>
       <body>
         <script
           type="application/ld+json"

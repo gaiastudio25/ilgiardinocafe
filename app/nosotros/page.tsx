@@ -1,112 +1,171 @@
 import Image from "next/image";
 import ScrollReveal from "../components/ScrollReveal";
 import Link from "next/link";
-const pillars = [
+
+const conceptos = [
   {
     number: "01",
     title: "Sin apuro",
     description:
-      "Un espacio donde el reloj no mandos. Cada taza se prepara con el tiempo que merece, y cada visita se disfruta sin cuenta regresiva.",
-    accent: "Slow coffee",
+      "Un espacio donde el reloj no manda. Cada taza se prepara con el tiempo que merece, y cada visita se disfruta sin cuenta regresiva.",
+    tag: "Slow coffee",
   },
   {
     number: "02",
     title: "Sin ruido",
     description:
       "Un refugio del caos cotidiano. Música suave, luz cálida y una atmósfera pensada para que tu mente descanse o se inspire.",
-    accent: "Refugio urbano",
+    tag: "Refugio urbano",
   },
   {
     number: "03",
     title: "Sin pretensión",
     description:
       "Calidad genuina, sin poses. Lo que ves es lo que somos: café honesto, ingredientes de verdad y un equipo que ama lo que hace.",
-    accent: "Autenticidad",
+    tag: "Autenticidad",
   },
 ];
 
 export default function NosotrosPage() {
   return (
-    <div className="pt-24">
-      <section className="section-padding">
-        <div className="mx-auto max-w-5xl px-6 lg:px-10">
+    <div className="pt-16 lg:pt-20">
+      {/* ── HERO (crema) ── */}
+      <section className="py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7">
+              <ScrollReveal>
+                <p className="font-accent text-xs uppercase tracking-[0.3em] text-palta-dark">
+                  Concepto No. 01 — El Refugio
+                </p>
+                <h1 className="mt-6 font-heading text-5xl uppercase leading-[0.95] tracking-wider text-carbon sm:text-6xl lg:text-7xl">
+                  La pausa
+                  <br />
+                  que el día
+                  <br />
+                  necesita
+                </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={250}>
+                <p className="mt-12 max-w-md text-lg leading-relaxed text-carbon-light">
+                  Un estudio donde el diseño y la calidez conviven. Donde cada
+                  taza se sirve con la misma intención con la que elegimos cada
+                  detalle.
+                </p>
+              </ScrollReveal>
+            </div>
+            <div className="lg:col-span-5">
+              <ScrollReveal delay={400}>
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full max-h-[400px] lg:max-h-none overflow-hidden rounded-sm">
+                  <Image
+                    src="/images/expresso-bruma.png"
+                    alt="Interior de Bruma Café"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── IMAGE BREAK ── */}
+      <section>
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <ScrollReveal>
-            <div className="mb-24 text-center">
-              <p className="mb-6 font-accent text-xs uppercase tracking-[0.35em] text-palta-dark">
-                Nuestra historia
-              </p>
-              <h1 className="font-heading text-5xl uppercase leading-tight text-carbon sm:text-6xl lg:text-7xl">
-                Más que<br />un café
-              </h1>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={200}>
-            <div className="space-y-8 text-xl leading-relaxed text-carbon-light">
-              <p>
-                Todo empezó con una pregunta simple:{" "}
-                <em className="text-salvia">
-                  ¿qué pasa cuando un café deja de ser un lugar donde
-                  consumís y empieza a ser un lugar donde existís?
-                </em>
-              </p>
-              <p>
-                Bruma nació de esa inquietud. De querer crear un espacio
-                donde el tiempo se mide distinto, donde la taza de café no
-                es el producto sino la excusa para detenerse.
-              </p>
-              <p>
-                Antes fuimos Cardenal Carrasco. Hoy somos una marca 100%
-                propia y local, construida con las manos y con la certeza
-                de que lo bueno se hace despacio.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={300}>
-            <div className="mt-16 flex items-center justify-center gap-6">
-              <div className="h-px w-16 bg-arcilla/50" />
-              <p className="font-accent text-xs text-carbon-lighter">
-                100% local · Café de especialidad · Desde 2024
-              </p>
-              <div className="h-px w-16 bg-arcilla/50" />
+            <div className="relative aspect-[16/9] lg:aspect-[3/1] w-full max-h-[250px] lg:max-h-none overflow-hidden rounded-sm">
+              <Image
+                src="/images/bruma-coffee-house.png"
+                alt="Ambiente de Bruma Café"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      <section className="section-padding bg-salvia text-white">
-        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+      {/* ── STORY (crema-dark) ── */}
+      <section className="py-24 lg:py-32 bg-crema-dark">
+        <div className="mx-auto max-w-3xl px-6 lg:px-12">
           <ScrollReveal>
-            <div className="mb-20 text-center">
-              <p className="mb-6 font-accent text-xs uppercase tracking-[0.35em] text-palta">
+            <p className="font-accent text-xs uppercase tracking-[0.3em] text-palta-dark">
+              Nuestra historia
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={150}>
+            <p className="mt-12 text-2xl leading-relaxed text-carbon/80 italic font-heading">
+              &ldquo;¿Qué pasa cuando un café deja de ser un lugar donde
+              consumís y empieza a ser un lugar donde existís?&rdquo;
+            </p>
+          </ScrollReveal>
+          <div className="mt-16 space-y-6">
+            <ScrollReveal delay={300}>
+              <p className="text-[17px] leading-relaxed text-carbon-light">
+                Bruma nació de esa inquietud. De querer crear un espacio donde
+                el tiempo se mide distinto, donde la taza de café no es el
+                producto sino la excusa para detenerse.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={400}>
+              <p className="text-[17px] leading-relaxed text-carbon-light">
+                Antes fuimos Cardenal Carrasco. Hoy somos una marca 100% propia
+                y local, construida con las manos y con la certeza de que lo
+                bueno se hace despacio.
+              </p>
+            </ScrollReveal>
+          </div>
+          <ScrollReveal delay={500}>
+            <div className="mt-16 flex items-center gap-6">
+              <div className="h-px flex-1 bg-crema-dark/60" />
+              <span className="font-accent text-[11px] uppercase tracking-[0.25em] text-carbon-lighter">
+                Desde 2024
+              </span>
+              <div className="h-px flex-1 bg-crema-dark/60" />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ── CONCEPT / PILLARS (salvia) ── */}
+      <section className="py-16 lg:py-24 bg-salvia text-white">
+        <div className="mx-auto max-w-6xl px-6 lg:px-12">
+          <ScrollReveal>
+            <div className="mb-16 text-center">
+              <p className="mb-4 font-accent text-xs uppercase tracking-[0.4em] text-palta">
                 El concepto
               </p>
-              <h2 className="font-heading text-4xl uppercase leading-tight sm:text-5xl lg:text-6xl">
-                Un punto de<br />respiración
+              <h2 className="font-heading text-3xl text-white sm:text-4xl lg:text-5xl">
+                Un punto de respiración
               </h2>
-              <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-white/70">
-                Creemos en los espacios que cuidan. En que una pausa bien tomada
-                puede cambiar el resto del día.
-              </p>
+              <div className="mt-4 flex items-center justify-center gap-2">
+                <span className="h-px w-6 bg-palta/40" />
+                <span className="w-1 h-1 rounded-full bg-palta/40" />
+                <span className="h-px w-6 bg-palta/40" />
+              </div>
             </div>
           </ScrollReveal>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {pillars.map((pillar, i) => (
-              <ScrollReveal key={pillar.number} delay={i * 150}>
-                <div className="group rounded-2xl border border-white/10 bg-white/5 p-10 backdrop-blur-sm transition-all duration-500 hover:border-palta/30 hover:bg-white/10">
-                  <span className="font-accent text-sm text-palta">{pillar.number}</span>
-                  <h3 className="mt-6 font-heading text-2xl uppercase tracking-wide lg:text-3xl">
-                    {pillar.title}
+          <div className="grid gap-8 md:grid-cols-3 md:gap-4">
+            {conceptos.map((c, i) => (
+              <ScrollReveal key={c.number} delay={i * 150}>
+                <div className="group border-l border-white/10 pl-6 transition-all duration-500 hover:border-palta/40">
+                  <span className="font-accent text-xs text-palta/70">
+                    {c.number}
+                  </span>
+                  <h3 className="mt-3 font-heading text-lg uppercase tracking-wide text-white">
+                    {c.title}
                   </h3>
-                  <p className="mt-4 text-base leading-relaxed text-white/60">
-                    {pillar.description}
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">
+                    {c.description}
                   </p>
-                  <div className="mt-8 flex items-center gap-3">
-                    <div className="h-px w-8 bg-palta/50 transition-all duration-500 group-hover:w-12" />
-                    <span className="font-accent text-xs uppercase tracking-wider text-palta/70">
-                      {pillar.accent}
+                  <div className="mt-4 flex items-center gap-2">
+                    <div className="h-px w-6 bg-palta/30 transition-all duration-500 group-hover:w-10" />
+                    <span className="font-accent text-[10px] uppercase tracking-wider text-palta/50">
+                      {c.tag}
                     </span>
                   </div>
                 </div>
@@ -116,46 +175,46 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid items-center gap-16 md:grid-cols-2">
-            <ScrollReveal>
-              <div className="relative">
-                <div className="overflow-hidden rounded-2xl">
+      {/* ── FINAL IMAGE + CTA ── */}
+      <section className="pb-24 lg:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid items-center gap-16 lg:grid-cols-12">
+            <div className="lg:col-span-6 lg:col-start-1">
+              <ScrollReveal>
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full max-h-[400px] lg:max-h-none overflow-hidden rounded-sm">
                   <Image
-                    src="/images/cafe-interior.png"
-                    alt="Interior de Bruma Café"
-                    width={640}
-                    height={800}
-                    className="h-auto w-full object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    src="/images/capuchino-bruma.png"
+                    alt="Café latte con latte art"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                <div className="absolute -bottom-6 -left-6 rounded-xl bg-salvia px-6 py-4 text-white shadow-lg md:-left-10">
-                  <p className="font-accent text-xs uppercase tracking-wider opacity-80">
-                    Desde
-                  </p>
-                  <p className="font-heading text-2xl">2024</p>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={200}>
-              <div className="space-y-8">
-                <h2 className="font-heading text-4xl uppercase leading-tight text-carbon sm:text-5xl lg:text-6xl">
-                  Un refugio<br />en la ciudad
-                </h2>
-                <p className="text-lg leading-relaxed text-carbon-light">
-                  Bruma es ese rincón donde la ciudad se detiene. Donde la luz entra
-                  suave por las ventanas, donde la música no compite con tus
-                  pensamientos y donde cada visita se siente como volver a
-                  un lugar que ya conoces.
+              </ScrollReveal>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8">
+              <ScrollReveal delay={200}>
+                <p className="font-accent text-xs uppercase tracking-[0.3em] text-palta-dark">
+                  El espacio
                 </p>
-                <Link href="/contacto" className="btn-primary">
-                  Visitanos
+                <h2 className="mt-8 font-heading text-3xl uppercase leading-[0.95] tracking-wider text-carbon sm:text-4xl lg:text-5xl">
+                  Un refugio
+                  <br />
+                  en la ciudad
+                </h2>
+                <p className="mt-8 max-w-sm text-[17px] leading-relaxed text-carbon-light">
+                  Bruma es ese rincón donde la ciudad se detiene. Donde la luz
+                  entra suave por las ventanas y cada visita se siente como
+                  volver a un lugar que ya conocés.
+                </p>
+                <Link
+                  href="/contacto"
+                  className="mt-10 inline-block font-accent text-sm uppercase tracking-[0.25em] text-palta underline underline-offset-8 decoration-palta/30 hover:decoration-palta transition-all duration-300"
+                >
+                  Vení a conocernos
                 </Link>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>

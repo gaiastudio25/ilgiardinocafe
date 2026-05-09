@@ -9,7 +9,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0">
         <Image
-          src="/images/hero.png"
+          src="/images/bar-bruma.png"
           alt="Interior cálido de Bruma Café"
           fill
           priority

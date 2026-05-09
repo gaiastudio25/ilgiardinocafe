@@ -2,16 +2,16 @@ import ScrollReveal from "./ScrollReveal";
 
 const reviews = [
   {
-    name: "Lucía M.",
-    text: "El mejor café de especialidad de Montevideo. El flat white es perfecto y el ambiente es ideal para trabajar. Mi lugar favorito.",
+    name: "Rossana A.",
+    text: "Disfrutamos de una merienda en el nuevo local de Carrasco y la experiencia fue súper buena: el café de especialidad es riquísimo y la comida tanto salada como dulce es súper tentadora y disfrutable 🤗 sin dudas volveremos para elegir nuevas propuestas y disfrutar de una excelente atención",
   },
   {
-    name: "Andrés P.",
-    text: "Un refugio en la ciudad. La V60 es espectacular y las medialunas recién horneadas son imperdibles. Volver cada semana.",
+    name: "Ana Carolina S.",
+    text: "Fuimos con mi equipo de trabajo a este lugar y la verdad fue un acierto total. El brunch estaba delicioso, con opciones frescas y bien presentadas, y el ambiente era muy agradable para compartir un buen momento. Pero lo que realmente marcó la diferencia fue la amabilidad del servicio: nos atendieron con una sonrisa, atentos en todo momento y con mucha calidez. ¡Da gusto encontrar lugares así! Sin duda vamos a volver. 😊",
   },
   {
-    name: "Carolina G.",
-    text: "El espacio es hermoso, la atención es increíble y el café es de primera calidad. Bruma se convirtió en mi oficina alterna.",
+    name: "Alejandro B.",
+    text: "Muy lindo todo. Excelente atención del personal y de los dueños, todos atentos para ofrecer una excelente experiencia. Una carta muy original, y con precios muy razonables, con algunas opciones únicas. Un lugar de paso para pasar un buen rato, en una zona que necesitaba un lugar así.",
   },
 ];
 

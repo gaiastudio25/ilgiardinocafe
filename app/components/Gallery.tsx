@@ -3,22 +3,22 @@ import ScrollReveal from "./ScrollReveal";
 
 const galleryImages = [
   {
-    src: "/images/hero.png",
+    src: "/images/capuchino-bruma.png",
     alt: "Ambiente cálido de Bruma Café con luz natural",
     span: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "/images/coffee-latte.png",
+    src: "/images/expresso-bruma.png",
     alt: "Latte art en taza de cerámica artesanal",
     span: "",
   },
   {
-    src: "/images/pourover.png",
+    src: "/images/grilled-cheese-bruma.png",
     alt: "Preparación de café V60 pour over",
     span: "",
   },
   {
-    src: "/images/cafe-corner.png",
+    src: "/images/toston-bruma.png",
     alt: "Rincón de trabajo con laptop y café",
     span: "md:col-span-2",
   },

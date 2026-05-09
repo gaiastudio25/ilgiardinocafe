@@ -15,11 +15,12 @@ export const metadata: Metadata = {
 export default function ContactoPage() {
   return (
     <div className="pt-24">
-      <section className="pt-8 pb-4 lg:pt-10 lg:pb-6">
+      {/* ── HERO SECTION ── */}
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <ScrollReveal>
             <div className="text-center">
-              <p className="mb-4 font-accent text-xs uppercase tracking-[0.3em] text-palta-dark">
+              <p className="mb-8 font-accent text-xs uppercase tracking-[0.3em] text-palta-dark">
                 Visitanos
               </p>
               <h1 className="font-heading text-5xl uppercase text-carbon sm:text-6xl lg:text-7xl">
@@ -27,8 +28,13 @@ export default function ContactoPage() {
               </h1>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
 
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+      {/* ── MAP + INFO SECTION ── */}
+      <section className="py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <ScrollReveal>
               <div className="overflow-hidden rounded-2xl shadow-sm">
                 <iframe
@@ -67,7 +73,7 @@ export default function ContactoPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <div className="space-y-12">
+              <div className="space-y-10">
                 <div>
                   <h2 className="mb-6 font-heading text-2xl uppercase tracking-wide text-carbon">
                     Dirección

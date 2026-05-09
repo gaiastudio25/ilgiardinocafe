@@ -29,7 +29,7 @@ export default function MenuContent() {
 
   return (
     <div className="menu-page pt-24">
-      <section className="pt-8 pb-4 lg:pt-10 lg:pb-6">
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
           <p className="mb-6 font-accent text-xs uppercase tracking-[0.35em] text-palta-dark">
             Nuestra oferta
