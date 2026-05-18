@@ -1,19 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* Bruma Café Color Palette */
-  --color-crema: #F7F2EC;
-  --color-crema-dark: #EDE5DA;
-  --color-palta: #A9CB5A;
-  --color-palta-dark: #8FB843;
-  --color-salvia: #4A6741;
-  --color-nude: #C9A98A;
-  --color-arcilla: #D4B8A5;
-  --color-carbon: #2D2D2D;
-  --color-carbon-light: #6B6B6B;
-  --color-carbon-lighter: #9B9B9B;
-  --color-olive: #5E6B4D;
-  --color-olive-light: #8B9A6B;
+  /* Il Giardino Café Color Palette */
+  --color-crema: #F3EFE7;
+  --color-crema-dark: #E8E2D6;
+  --color-primary: #A6AE9A;
+  --color-primary-dark: #8E9782;
+  --color-secondary: #C47A5A;
+  --color-secondary-dark: #B06A48;
+  --color-carbon: #2B2B2B;
+  --color-carbon-light: #5A5A5A;
+  --color-carbon-lighter: #8A8A8A;
+  --color-olive: #5A624F;
+  --color-olive-light: #7A8269;
 
   /* Typography */
   --font-heading: var(--font-playfair), "Playfair Display", serif;
@@ -36,7 +35,7 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-palta);
+  background-color: var(--color-primary);
   color: var(--color-carbon);
 }
 
@@ -138,7 +137,7 @@ body {
 
 /* ── Navbar ── */
 .navbar-solid {
-  background-color: rgba(247, 242, 236, 0.92);
+  background-color: rgba(243, 239, 231, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
@@ -188,7 +187,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
-  background-color: var(--color-salvia);
+  background-color: var(--color-secondary);
   color: white;
   font-family: var(--font-body);
   font-weight: 500;
@@ -201,9 +200,9 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-palta-dark);
+  background-color: var(--color-secondary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(74, 103, 65, 0.2);
+  box-shadow: 0 8px 24px rgba(196, 122, 90, 0.2);
 }
 
 .btn-secondary {
@@ -239,10 +238,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-arcilla);
+  background: var(--color-secondary);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-nude);
+  background: var(--color-secondary-dark);
 }

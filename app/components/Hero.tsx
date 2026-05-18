@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/bar-bruma.png"
-          alt="Interior cálido de Bruma Café"
+          alt="Interior cálido de Il Giardino Café"
           fill
           priority
           className="object-cover"
@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="relative z-10 px-6 text-center">
         <div className="animate-fade-in-up">
-          <p className="mb-4 font-accent text-xs uppercase tracking-[0.35em] text-salvia">
+          <p className="mb-4 font-accent text-xs uppercase tracking-[0.35em] text-olive">
             Café de especialidad
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function Hero() {
         <h1 className="animate-fade-in-up-delay-1 flex justify-center">
           <Image
             src="/images/logo.png"
-            alt="Bruma Café"
+            alt="Il Giardino Café"
             width={400}
             height={200}
             priority

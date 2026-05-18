@@ -31,7 +31,7 @@ export default function MenuContent() {
     <div className="menu-page pt-24">
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
-          <p className="mb-6 font-accent text-xs uppercase tracking-[0.35em] text-palta-dark">
+          <p className="mb-6 font-accent text-xs uppercase tracking-[0.35em] text-primary">
             Nuestra oferta
           </p>
           <h1 className="font-heading text-5xl uppercase leading-tight text-carbon sm:text-6xl lg:text-7xl">
@@ -46,7 +46,7 @@ export default function MenuContent() {
       <style jsx global>{`
         .menu-page {
           min-height: 100vh;
-          background: #f7f2ec;
+          background: #f3efe7;
           position: relative;
         }
 
@@ -150,7 +150,7 @@ export default function MenuContent() {
           <div className="menu-svg-wrapper">
             <Image
               src="/menu/1.svg"
-              alt="Menú Bruma Café - Página 1"
+              alt="Menú Il Giardino Café - Página 1"
               width={595}
               height={842}
               className="menu-img"
@@ -161,7 +161,7 @@ export default function MenuContent() {
           <div className="menu-svg-wrapper">
             <Image
               src="/menu/2.svg"
-              alt="Menú Bruma Café - Página 2"
+              alt="Menú Il Giardino Café - Página 2"
               width={595}
               height={842}
               className="menu-img"

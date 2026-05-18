@@ -26,26 +26,26 @@ const pinyonScript = Pinyon_Script({
 
 export const metadata: Metadata = {
   title: {
-    default: "Bruma Café — La pausa que el día necesita",
-    template: "%s | Bruma Café",
+    default: "Il Giardino Café — La pausa que el día necesita",
+    template: "%s | Il Giardino Café",
   },
   description:
-    "Bruma Café es un refugio urbano en Montevideo donde el diseño y la calidez conviven. Café de especialidad, espacio de trabajo y punto de respiración en la ciudad.",
+    "Il Giardino Café es un refugio urbano en Montevideo donde el diseño y la calidez conviven. Café de especialidad, espacio de trabajo y punto de respiración en la ciudad.",
   keywords: [
     "café de especialidad",
     "cafetería Montevideo",
-    "bruma café",
+    "il giardino café",
     "café Montevideo",
     "espacio de trabajo",
     "coworking café",
     "brunch Montevideo",
     "café de especialidad Uruguay",
   ],
-  metadataBase: new URL("https://brumacafe.com"),
+  metadataBase: new URL("https://ilgiardinocafe.com"),
   openGraph: {
     type: "website",
     locale: "es_UY",
-    siteName: "Bruma Café",
+    siteName: "Il Giardino Café",
   },
   robots: {
     index: true,
@@ -61,12 +61,12 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CafeOrCoffeeShop",
-    name: "Bruma Café",
+    name: "Il Giardino Café",
     description:
       "Café de especialidad en Montevideo. Refugio urbano con café de especialidad, espacio de trabajo y ambiente cálido.",
-    url: "https://brumacafe.com",
+    url: "https://ilgiardinocafe.com",
     telephone: "+59891234567",
-    email: "hola@brumacafe.com",
+    email: "hola@ilgiardinocafe.com",
     servesCuisine: "Coffee",
     priceRange: "$$",
     address: {
@@ -89,8 +89,8 @@ export default function RootLayout({
       latitude: -34.8752742,
       longitude: -56.0480125,
     },
-    image: "https://brumacafe.com/images/hero.png",
-    sameAs: ["https://instagram.com/brumacafe", "https://wa.me/59891234567"],
+    image: "https://ilgiardinocafe.com/images/hero.png",
+    sameAs: ["https://instagram.com/ilgiardinocafe", "https://wa.me/59891234567"],
   };
 
   return (

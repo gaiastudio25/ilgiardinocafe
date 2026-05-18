@@ -1,22 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-arcilla/20 bg-crema py-12">
+    <footer className="border-t border-secondary/20 bg-crema py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
           <div className="text-center md:text-left">
-            <Link
-              href="/"
-              className="font-heading text-2xl uppercase tracking-wider text-carbon"
-            >
-              BRUMA CAFÉ
+            <Link href="/" className="block">
+              <Image
+                src="/images/logo.png"
+                alt="Il Giardino Café"
+                width={120}
+                height={60}
+                className="h-auto w-auto"
+              />
             </Link>
-            <p className="mt-1 font-accent text-xs text-carbon-lighter">
-              La pausa que el día necesita
-            </p>
+            
           </div>
 
           <nav aria-label="Footer navigation" className="flex gap-6">
@@ -28,7 +30,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-accent text-xs uppercase tracking-wider text-carbon-light transition-colors hover:text-salvia"
+                className="font-accent text-xs uppercase tracking-wider text-carbon-light transition-colors hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -37,11 +39,11 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://instagram.com/brumacafe"
+              href="https://instagram.com/ilgiardino.cafe"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-carbon-light transition-colors hover:text-salvia"
+              className="text-carbon-light transition-colors hover:text-primary"
             >
               <svg
                 width="18"
@@ -63,7 +65,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="text-carbon-light transition-colors hover:text-salvia"
+              className="text-carbon-light transition-colors hover:text-primary"
             >
               <svg
                 width="18"
@@ -77,9 +79,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-arcilla/20 pt-6 text-center">
+        <div className="mt-10 border-t border-secondary/20 pt-6 text-center">
           <p className="font-accent text-[11px] text-carbon-lighter">
-            © {new Date().getFullYear()} Bruma Café. Todos los derechos
+            © {new Date().getFullYear()} Il Giardino Café. Todos los derechos
             reservados.
           </p>
         </div>

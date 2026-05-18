@@ -43,14 +43,14 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "navbar-solid py-3" : "py-5"}`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
-        <Link href="/" className="block">
+<Link href="/" className="block">
           <img
-            src="/images/logo.png"
-            alt="Bruma Café"
-            width={100}
-            height={100}
+            src="/images/logo-hoja.png"
+            alt="Il Giardino Café"
+            width={60}
+            height={60}
             className="font-heading text-xl tracking-wider text-carbon"
-            aria-label="Bruma Café - Inicio"
+            aria-label="Il Giardino Café - Inicio"
           />
         </Link>
 
@@ -59,7 +59,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="font-accent text-xs uppercase tracking-widest text-carbon-light transition-colors duration-300 hover:text-salvia"
+                className="font-accent text-xs uppercase tracking-widest text-carbon-light transition-colors duration-300 hover:text-primary"
               >
                 {link.label}
               </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
         />
 
         <div
-          className={`fixed inset-y-0 right-0 z-50 w-[80%] max-w-sm bg-[#F7F2EC] shadow-2xl transform transition-transform duration-500 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"} md:hidden`}
+          className={`fixed inset-y-0 right-0 z-50 w-[80%] max-w-sm bg-[#F3EFE7] shadow-2xl transform transition-transform duration-500 ease-in-out ${mobileOpen ? "translate-x-0" : "translate-x-full"} md:hidden`}
         >
           <div className="flex flex-col h-full p-8">
             <div className="flex justify-end mb-12">
@@ -104,7 +104,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={handleLinkClick}
-                className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A9CB5A] transition-colors"
+                className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A6AE9A] transition-colors"
               >
                 Inicio
               </Link>
@@ -113,24 +113,24 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A9CB5A] transition-colors"
+                  className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A6AE9A] transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
 
-            <div className="mt-auto pt-12 border-t border-[#D4B8A5]/30">
-              <p className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-[0.2em] text-[#C9A98A] mb-4">
+            <div className="mt-auto pt-12 border-t border-[#C47A5A]/30">
+              <p className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-[0.2em] text-[#C47A5A] mb-4">
                 La pausa que el día necesita
               </p>
               <div className="flex flex-col gap-1 text-[11px] font-['DM_Sans'] text-carbon/60">
                 <span>Montevideo, Uruguay</span>
                 <a
-                  href="https://instagram.com/brumacafe"
-                  className="underline decoration-[#A9CB5A] underline-offset-4"
+                  href="https://instagram.com/ilgiardino.cafe"
+                  className="underline decoration-[#A6AE9A] underline-offset-4"
                 >
-                  @brumacafe
+                  @ilgiardino.cafe
                 </a>
               </div>
             </div>
