@@ -104,7 +104,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={handleLinkClick}
-                className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A6AE9A] transition-colors"
+                className="font-['Anton'] text-xl uppercase tracking-tighter text-carbon hover:text-[#A6AE9A] transition-colors"
               >
                 Inicio
               </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={handleLinkClick}
-                  className="font-['Anton'] text-3xl uppercase tracking-tighter text-carbon hover:text-[#A6AE9A] transition-colors"
+                  className="font-['Anton'] text-xl uppercase tracking-tighter text-carbon hover:text-[#A6AE9A] transition-colors"
                 >
                   {link.label}
                 </Link>
