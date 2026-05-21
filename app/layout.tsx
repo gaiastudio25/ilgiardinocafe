@@ -65,7 +65,7 @@ export default function RootLayout({
     description:
       "Café de especialidad en Montevideo. Refugio urbano con café de especialidad, espacio de trabajo y ambiente cálido.",
     url: "https://ilgiardinocafe.com",
-    telephone: "+59891234567",
+    telephone: "+59895834531",
     email: "hola@ilgiardinocafe.com",
     servesCuisine: "Coffee",
     priceRange: "$$",
@@ -90,7 +90,7 @@ export default function RootLayout({
       longitude: -56.0480125,
     },
     image: "https://ilgiardinocafe.com/images/hero.png",
-    sameAs: ["https://instagram.com/ilgiardinocafe", "https://wa.me/59891234567"],
+    sameAs: ["https://instagram.com/ilgiardinocafe", "https://wa.me/59895834531"],
   };
 
   return (

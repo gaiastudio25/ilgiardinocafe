@@ -28,16 +28,16 @@ export default function MenuContent() {
   };
 
   return (
-    <div className="menu-page pt-24">
-      <section className="py-16 lg:py-24">
+    <div className="menu-page pt-20">
+      <section className="py-8 lg:py-10">
         <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
-          <p className="mb-6 font-accent text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="mb-4 font-accent text-xs uppercase tracking-[0.35em] text-primary">
             Nuestra oferta
           </p>
-          <h1 className="font-heading text-5xl uppercase leading-tight text-carbon sm:text-6xl lg:text-7xl">
+          <h1 className="font-heading text-4xl uppercase text-carbon sm:text-5xl">
             Nuestro menú
           </h1>
-          <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-carbon-light">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-carbon-light">
             Café de especialidad, bebidas artesanales y opciones para acompañar.
           </p>
         </div>

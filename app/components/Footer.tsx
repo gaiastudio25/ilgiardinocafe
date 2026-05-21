@@ -61,7 +61,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://wa.me/59891234567"
+              href="https://wa.me/59895834531"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

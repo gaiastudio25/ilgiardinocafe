@@ -21,16 +21,7 @@ const galleryImages = [
     alt: "Rincón de trabajo con laptop y café",
     span: "md:col-span-2",
   },
-  {
-    src: "/images/pastries.png",
-    alt: "Selección de pastelería artesanal del día",
-    span: "",
-  },
-  {
-    src: "/images/cafe-interior.png",
-    alt: "Barra de café con máquina de espresso y plantas",
-    span: "",
-  },
+  
 ];
 
 export default function Gallery() {

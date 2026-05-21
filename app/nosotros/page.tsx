@@ -31,7 +31,7 @@ export default function NosotrosPage() {
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-8">
               <p className="font-accent text-xs uppercase tracking-[0.3em] text-primary">
                 Concepto No. 01 — El Refugio
               </p>
@@ -48,7 +48,7 @@ export default function NosotrosPage() {
                 detalle.
               </p>
             </div>
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-4">
               <div className="relative aspect-[3/4] w-full max-h-[350px] lg:max-h-none overflow-hidden rounded-sm">
                 <Image
                   src="/images/expresso-bruma.png"
@@ -146,7 +146,7 @@ export default function NosotrosPage() {
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="grid items-center gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-6 lg:col-start-1">
+            <div className="lg:col-span-5 lg:col-start-1">
               <div className="relative aspect-[3/4] w-full max-h-[350px] lg:max-h-none overflow-hidden rounded-sm">
                 <Image
                   src="/images/capuchino-bruma.png"
@@ -157,7 +157,7 @@ export default function NosotrosPage() {
                 />
               </div>
             </div>
-            <div className="lg:col-span-5 lg:col-start-8">
+            <div className="lg:col-span-5 lg:col-start-7">
               <p className="font-accent text-xs uppercase tracking-[0.3em] text-primary">
                 El espacio
               </p>

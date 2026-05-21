@@ -82,9 +82,9 @@ export default function ContactoPage() {
                 </h2>
                 <div className="space-y-2">
                   {[
-                    { day: "Lunes a viernes", hours: "8:00 — 20:00" },
-                    { day: "Sábados", hours: "9:00 — 18:00" },
-                    { day: "Domingos", hours: "9:00 — 14:00" },
+                    { day: "Lunes a viernes", hours: "8:00 — 19:00" },
+                    { day: "Sábados", hours: "10:00 — 20:00" },
+                   // { day: "Domingos", hours: "9:00 — 14:00" },
                   ].map((schedule) => (
                     <div
                       key={schedule.day}
@@ -113,10 +113,10 @@ export default function ContactoPage() {
                     hola@ilgiardinocafe.com
                   </a>
                   <a
-                    href="tel:+59891234567"
+                    href="tel:+59895834531"
                     className="block transition-colors hover:text-olive"
                   >
-                    +598 91 234 567
+                    +598 95 834 531 
                   </a>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function ContactoPage() {
                     </svg>
                   </a>
                   <a
-                    href="https://wa.me/59891234567"
+                    href="https://wa.me/59895834531"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
