@@ -51,7 +51,7 @@ export default function NosotrosPage() {
             <div className="lg:col-span-4">
               <div className="relative aspect-[3/4] w-full max-h-[350px] lg:max-h-none overflow-hidden rounded-sm">
                 <Image
-                  src="/images/expresso-bruma.png"
+                  src="/images/nosotros.png"
                   alt="Interior de Il Giardino Café"
                   fill
                   className="object-cover"
@@ -93,9 +93,7 @@ export default function NosotrosPage() {
               producto sino la excusa para detenerse.
             </p>
             <p className="text-base leading-relaxed text-carbon-light">
-              Antes fuimos Cardenal Carrasco. Hoy somos una marca 100% propia
-              y local, construida con las manos y con la certeza de que lo
-              bueno se hace despacio.
+              Hoy somos una cafetería de especialidad en Carrasco con identidad propia. Un espacio en Montevideo donde el buen café, el brunch y la pastelería artesanal se hacen despacio y con ganas.
             </p>
           </div>
           <div className="mt-8 flex items-center gap-6">

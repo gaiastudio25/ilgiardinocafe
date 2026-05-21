@@ -84,7 +84,7 @@ export default function ContactoPage() {
                   {[
                     { day: "Lunes a viernes", hours: "8:00 — 19:00" },
                     { day: "Sábados", hours: "10:00 — 20:00" },
-                   // { day: "Domingos", hours: "9:00 — 14:00" },
+                    // { day: "Domingos", hours: "9:00 — 14:00" },
                   ].map((schedule) => (
                     <div
                       key={schedule.day}
@@ -107,16 +107,16 @@ export default function ContactoPage() {
                 </h2>
                 <div className="space-y-1 text-sm text-carbon-light">
                   <a
-                    href="mailto:hola@ilgiardinocafe.com"
+                    href="mailto:cafeilgiardino@gmail.com"
                     className="block transition-colors hover:text-olive"
                   >
-                    hola@ilgiardinocafe.com
+                    cafeilgiardino@gmail.com
                   </a>
                   <a
                     href="tel:+59895834531"
                     className="block transition-colors hover:text-olive"
                   >
-                    +598 95 834 531 
+                    +598 95 834 531
                   </a>
                 </div>
               </div>

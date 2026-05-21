@@ -170,7 +170,6 @@ body {
 /* ── Gallery grid ── */
 .gallery-item {
   overflow: hidden;
-  border-radius: 12px;
 }
 
 .gallery-item img {

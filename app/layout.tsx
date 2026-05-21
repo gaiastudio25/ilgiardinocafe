@@ -66,7 +66,7 @@ export default function RootLayout({
       "Café de especialidad en Montevideo. Refugio urbano con café de especialidad, espacio de trabajo y ambiente cálido.",
     url: "https://ilgiardinocafe.com",
     telephone: "+59895834531",
-    email: "hola@ilgiardinocafe.com",
+    email: "cafeilgiardino@gmail.com",
     servesCuisine: "Coffee",
     priceRange: "$$",
     address: {
