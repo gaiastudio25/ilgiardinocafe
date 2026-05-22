@@ -149,7 +149,7 @@ export default function MenuContent() {
         <div className="menu-svg-container">
           <div className="menu-svg-wrapper">
             <Image
-              src="/menu/1.svg"
+              src="/menu/7.svg"
               alt="Menú Il Giardino Café - Página 1"
               width={595}
               height={842}
@@ -160,7 +160,7 @@ export default function MenuContent() {
           </div>
           <div className="menu-svg-wrapper">
             <Image
-              src="/menu/2.svg"
+              src="/menu/8.svg"
               alt="Menú Il Giardino Café - Página 2"
               width={595}
               height={842}
